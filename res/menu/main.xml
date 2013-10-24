@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_bar_camera"
+        android:title="@string/aciton_bar_camera"
+        android:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_bar_from_gallery"
+        android:title="@string/action_bar_from_gallery"
+        android:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/multiple_select_mode"
+        android:title="@string/select_items" />
+    <item
+        android:id="@+id/preference_settings"
+        android:title="@string/preference_settings" />
+
+</menu>

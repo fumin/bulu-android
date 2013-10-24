@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/user_info"
+        android:key="preference_user_info">
+        <CheckBoxPreference
+            android:key="share_user_info"
+            android:title="@string/share_user_info"
+            android:summary="@string/share_user_info_summ"
+            android:defaultValue="true" />
+        <EditTextPreference
+            android:key="username"
+            android:title="@string/username" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/data_transfer"
+        android:key="preference_data_transfer">
+        <EditTextPreference
+            android:key="image_quality"
+            android:title="@string/image_quality"
+            android:summary="@string/image_quality_summ"
+            android:inputType="number"
+            android:defaultValue="4096" />
+    </PreferenceCategory>
+    
+    
+</PreferenceScreen>
