@@ -11,6 +11,8 @@ import java.net.URL;
 
 import org.apache.http.util.EncodingUtils;
 
+import com.cardinalblue.bulu.BuluApplication;
+
 import android.graphics.Bitmap;
 import android.util.Base64;
 import android.util.Log;
@@ -37,12 +39,13 @@ public class BuluUtils {
 		Log.i(TAG, String.format("%d, %d", img.getWidth(), img.getHeight()));
 		byte[] jpegImg = Utils.bitmapToJPEGBytes(img);
 		
-	    String dateStr = Utils.currentTimeInHTTPFormat();
-		String bucketName = "abcd";
-		String access_key = "abcd";
-		String secret_access = "abcd";
+	    
+		String bucketName = BuluApplication.s3Bucket;
+		String access_key = BuluApplication.s3AccessKeyId;
+		String secret_access = BuluApplication.s3SecretAccessKey;
 		
 		// Prepare authorization signature
+		String dateStr = Utils.currentTimeInHTTPFormat();
 		String strToSign = String.format("PUT\n\nimage/jpeg\n%s\nx-amz-acl:public-read\n/%s/expires_in_days/7/bulu/%s.jpg", dateStr, bucketName, filename);
 		String signature = Base64.encodeToString(Utils.HMAC_SHA1(EncodingUtils.getAsciiBytes(strToSign), EncodingUtils.getAsciiBytes(secret_access)), Base64.NO_WRAP);
 		
